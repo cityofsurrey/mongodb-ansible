@@ -1,0 +1,6 @@
+---
+- name: create mongodb
+  sudo: yes
+  hosts: all
+  roles:
+  - { role: mongodb }
