@@ -1,3 +1,8 @@
+master ansible_ssh_host=192.168.33.20
+node1 ansible_ssh_host=192.168.33.31
+node2 ansible_ssh_host=192.168.33.32
+node3 ansible_ssh_host=192.168.33.33
+
 [mongo_master]
 master mongo_master=True
 
@@ -10,6 +15,6 @@ node3
 mongo_master
 mongo_replicas
 
-[mongodb:vars]
+[mongo:vars]
 ansible_ssh_user=vagrant
 ansible_ssh_pass=vagrant
