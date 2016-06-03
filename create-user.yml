@@ -1,15 +1,15 @@
 ---
 
-- hosts: 192.168.33.32
+- hosts: "{{host_name}}"
   tasks:
   - name: create a user
     mongodb_user:
       database: "zephyr-test"
-      name: "admin"
-      password: "admin"
+      name: "{{user_name}}"
+      password: "{{password}}"
       roles: "readWrite"
       state: present
       login_user: "sauron"
       login_password: "gorthaur"
       login_port: "{{ mongodb_login_port|default(27017) }}"
-      login_host: 192.168.33.20
+      login_host: "{{login_host_name}}"
