@@ -1,0 +1,15 @@
+[mongo_master]
+192.168.33.20 mongodb_master=True
+
+[mongo_nodes]
+192.168.33.31
+192.168.33.32
+192.168.33.33
+
+[mongo:children]
+mongo_master
+mongo_nodes
+
+[mongo:vars]
+ansible_ssh_user=vagrant
+ansible_ssh_pass=vagrant

@@ -1,0 +1,15 @@
+---
+
+- hosts: "{{ host }}"
+  tasks:
+  - name: create a mongodb user
+    mongodb_user:
+      database: {{ database }}
+      name: "{{ user_name }}"
+      password: "{{ user_password }}"
+      roles: "{{ user_roles }}"
+      state: present
+      login_user: "{{ mongodb_user_admin_name }}"
+      login_password: "{{ mongodb_user_admin_password }}"
+      login_port: "{{ mongodb_login_port|default(27017) }}"
+      login_host: "{{ mongodb_login_host|default('localhost') }}"

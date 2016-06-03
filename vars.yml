@@ -1,0 +1,50 @@
+---
+
+mongodb_net_bindip: 0.0.0.0
+
+mongodb_apt_keyserver: hkp://keyserver.ubuntu.com:80
+
+mongodb_replication_replset: "mordor"
+mongodb_login_host: 192.168.33.20
+
+mongodb_replication_params:
+  - { host_name: 192.168.33.20, host_port: "{{ mongodb_net_port }}", host_type: replica }
+  - { host_name: 192.168.33.31, host_port: "{{ mongodb_net_port }}", host_type: replica }
+  - { host_name: 192.168.33.32, host_port: "{{ mongodb_net_port }}", host_type: replica }
+  - { host_name: 192.168.33.33, host_port: "{{ mongodb_net_port }}", host_type: replica }
+
+mongodb_security_authorization: "enabled"
+mongodb_users:
+  - {
+    name: admin,
+    password: admin,
+    roles: readWrite,
+    database: zephyr-development
+  }
+
+mongodb_user_admin_name: sauron
+mongodb_user_admin_password: gorthaur
+
+mongodb_root_admin_name: saruman
+mongodb_root_admin_password: whitewizard
+
+mongodb_root_backup_name: gollum
+mongodb_root_backup_password: smeagol
+
+mongodb_keyfile_content: |
+  WBwoKnUtD8rC75syMwDsQAXTETRZ3kHtaVsr7Mnk2tq2KrV9vClyzRxl3uqhpx1b
+  2TjZXpQLyDI8UlmiJqIl6axmmRHPwgK2AJflXJGSgo4T4rcMkoRF64uNHHHEiLVc
+  wxrCAIY5k6wT+R4QYC2Mw1I5zrOPioWSiVT+F9y3zFL7ZlsvjuygLINjNl4dt0dg
+  ukaoBykrEWnw4vUYEYFIW1OzXjp3OcQhyQy6th/d9uaezk79wgfpHdUa4CGRovRW
+  WlGWnPAykLSMduLXSt43ahKrxP0VQegJpkXNgXexqAWXYlzt+Wq/p3FDJM/u/CFL
+  INkiPMsWgTHZIqEEwGvHnafFU8Fq3rpv3yhl9u60Cn2mZb1nm20syzXTC/L4Z2ow
+  cOluvPz0M83M/k60iFIJ8fug8fEq9OwcPXpMmA7fzJj3gu87/qIK63PUaP1rNhGX
+  9AsArDZ4tcOonvS5KK1nvdb2emR8jhih8Cw6OUT7uDNAoyR5cJTG1dnC5iXtv4n3
+  MLhnRMM1jxfUdYG8uDtX4zI1VeO/Z2s/+MhRvnKkJx7f7CTdaocgoKHbRol8fqUo
+  bZa3hwFCwomV/qud2F+50iOKii5Q+HqaAJ+zbWZfzwy327U1CxUAIh93AvhW80eN
+  ij2u5Ao/VW4yTLeSZ4pINwoSpQ+Fs61WEWwfdao2ny6D0j5rAc3k2qTz1EMPs/Cw
+  eWYoqVFyp2hXbkgHjkYr2ZuYI09sfr2WbpCwAigQsLU4T2APto9dp9uaD+6jo+8U
+  LC2H/fyGpWhh0X3iAWkpsfWxzWxZYaq/jh48+HaCP/GwS30jJ0/cZfCKavH80rbf
+  n9YHWNyNse5IyQCtALlaoREVAojTO0ao+grKDkeeaWCk06ms2+PRdqMwN8pYzrLh
+  RRcFrAJmlWH+jyrRz3UAFQh/AiNRlWSEJQwEZTk8325H09GIld85YxTkXYdQBcNk
+  v0D/i+fwTz1My9WWIdYV9vkEi5n9
