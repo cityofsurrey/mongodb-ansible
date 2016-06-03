@@ -2,8 +2,11 @@
 
 mongodb_net_bindip: 0.0.0.0
 
+mongodb_apt_keyserver: hkp://keyserver.ubuntu.com:80
+
 mongodb_replication_replset: "mordor"
 mongodb_login_host: 192.168.33.20
+
 mongodb_replication_params:
   - { host_name: 192.168.33.20, host_port: "{{ mongodb_net_port }}", host_type: replica }
   - { host_name: 192.168.33.31, host_port: "{{ mongodb_net_port }}", host_type: replica }
