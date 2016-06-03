@@ -1,0 +1,9 @@
+---
+
+- name: Create mongodb cluster
+  become: yes
+  hosts: mongo
+  vars_files:
+    - vars.yml
+  roles:
+  - { role: mongodb }
